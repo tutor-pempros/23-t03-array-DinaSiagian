@@ -1,6 +1,6 @@
 // NIM - NAMA
 
- #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h> // for abs function
 
 int main() {

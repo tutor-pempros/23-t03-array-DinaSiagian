@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main() { 
     int num, smallest, largest;
 
     for (int i = 0; i < 9; i++) {
