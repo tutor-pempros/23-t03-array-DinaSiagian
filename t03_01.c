@@ -2,31 +2,38 @@
 
 #include <stdio.h>
 
-int main() { 
-    int num, smallest, largest;
+int main(int _argc, char **_argv)
+{
 
-    for (int i = 0; i < 9; i++) {
-        scanf("%d", &num);
+  int jumlahBaris, n, terbesar, terkecil;
 
-        if (num == 0) {
-            break;
-        }
+    // Meminta pengguna memasukkan jumlah elemen array
+    scanf("%d", &jumlahBaris);
 
-        if (i == 0) {
-            smallest = num;
-            largest = num;
-        } else {
-            if (num < smallest) {
-                smallest = num;
-            }
-            if (num > largest) {
-                largest = num;
-            }
+    int array[jumlahBaris];
+
+    // Meminta pengguna memasukkan elemen-elemen array
+    for (n = 0; n < jumlahBaris; n++) {
+        scanf("%d", &array[n]);
+    }
+
+    // Menginisialisasi terbesar dan terkecil dengan elemen pertama array
+    terbesar = terkecil = array[0];
+
+    // Mencari nilai terbesar dan terkecil dari array
+    for (n = 1; n < jumlahBaris; n++) {
+        if (array[n] > terbesar) {
+            terbesar = array[n];
+        } 
+        else if (array[n] < terkecil) {
+            terkecil = array[n];
         }
     }
 
-    printf("%d\n", smallest);
-    printf("%d\n", largest);
+    // Menampilkan nilai terkecil dan terbesar
+    printf("%d\n", terkecil);
+    printf("%d\n", terbesar);
 
     return 0;
-} 
+
+}
