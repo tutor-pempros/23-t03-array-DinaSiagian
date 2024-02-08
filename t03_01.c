@@ -3,31 +3,30 @@
 #include <stdio.h>
 
 int main() {
-    int n, i;
-    int numbers[100]; // Array to hold the numbers
+    int num, smallest, largest;
 
-    scanf("%d", &n);
+    for (int i = 0; i < 9; i++) {
+        scanf("%d", &num);
 
-    for(i = 0; i < n; i++) {
-        scanf("%d", &numbers[i]);
+        if (num == 0) {
+            break;
+        }
+
+        if (i == 0) {
+            smallest = num;
+            largest = num;
+        } else {
+            if (num < smallest) {
+                smallest = num;
+            }
+            if (num > largest) {
+                largest = num;
+            }
+        }
     }
 
-    // Assume the first number is the smallest and largest
-    int min = numbers[0];
-    int max = numbers[0];
-
-    // Loop through the array to find the actual min and max
-    for(i = 1; i < n; i++) {
-        if(numbers[i] < min) {
-            min = numbers[i];
-        }
-        if(numbers[i] > max) {
-            max = numbers[i];
-        }
-    }
-
-    printf("%d\n", min);
-    printf("%d\n", max);
+    printf("%d\n", smallest);
+    printf("%d\n", largest);
 
     return 0;
 } 
